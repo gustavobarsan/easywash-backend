@@ -80,11 +80,11 @@ app.delete("/usuarios/:id", async (req, res) => {
 });
 
 // CRUD LAVANDERIAS
-const lavaderiasRef = db.collection("lavanderias");
+const lavanderiasRef = db.collection("lavanderias");
 app.post("/lavanderias", async (req, res) => {
   try {
     const form = req.body;
-    await lavaderiasRef.add(form);
+    await lavanderiasRef.add(form);
     return res.status(200).send("Lavanderia adicionada");
   } catch (error) {
     throw new Error(error);
@@ -93,16 +93,54 @@ app.post("/lavanderias", async (req, res) => {
 
 app.get("/lavanderias", async (req, res) => {
   try {
-    const resp = await lavaderiasRef.get();
-    const listaLavanderias = resp.map((doc) => doc.data);
+    const resp = await lavanderiasRef.get();
+    let listaLavanderias = [];
+    resp.forEach((doc) => {
+      const lavanderia = doc.data();
+      lavanderia.id = doc.id;
+      listaLavanderias.push(lavanderia);
+      console.log(doc.id, "=>", doc.data());
+    });
+
     return res.status(200).json(listaLavanderias);
   } catch (error) {
     throw new Error(error);
   }
 });
 
-// app.patch();
-// app.delete();
+app.get("/lavanderias/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const resp = await lavanderiasRef.doc(id).get();
+    if (!resp.data()) {
+      return res.status(400).send("Lavanderia não encontrada");
+    }
+    return res.status(200).json(resp.data());
+  } catch (error) {}
+});
+
+app.patch("/lavanderias/:id", async (req, res) => {
+  const { id } = req.params;
+  const updateData = req.body;
+  try {
+    await db.runTransaction(async (t) => {
+      t.update(lavanderiasRef.doc(id), updateData);
+    });
+    return res.status(200).send("Lavanderia atualizada");
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.delete("/lavanderias/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await lavanderiasRef.doc(id).delete();
+    return res.status(200).send("Lavanderia deletada");
+  } catch (error) {
+    throw new Error(error);
+  }
+});
 
 // CRUD SERVIÇOS
 const servicosRef = db.collection("serviços");
@@ -116,8 +154,55 @@ app.post("/servicos", async (req, res) => {
   }
 });
 
-// app.get();
-// app.patch();
-// app.delete();
+app.get("/servicos", async (req, res) => {
+  try {
+    const resp = await servicosRef.get();
+    let listaServicos = [];
+    resp.forEach((doc) => {
+      const servico = doc.data();
+      servico.id = doc.id;
+      listaServicos.push(servico);
+      console.log(doc.id, "=>", doc.data());
+    });
+
+    return res.status(200).json(listaServicos);
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.get("/servicos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const resp = await servicosRef.doc(id).get();
+    if (!resp.data()) {
+      return res.status(400).send("Serviço não encontrado");
+    }
+    return res.status(200).json(resp.data());
+  } catch (error) {}
+});
+
+app.patch("/servicos/:id", async (req, res) => {
+  const { id } = req.params;
+  const updateData = req.body;
+  try {
+    await db.runTransaction(async (t) => {
+      t.update(servicosRef.doc(id), updateData);
+    });
+    return res.status(200).send("Serviço atualizado");
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.delete("/servicos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await servicosRef.doc(id).delete();
+    return res.status(200).send("Serviço deletado");
+  } catch (error) {
+    throw new Error(error);
+  }
+});
 
 app.listen(3000, () => console.log("Servidor rodando"));
