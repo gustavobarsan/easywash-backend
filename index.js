@@ -1,7 +1,7 @@
 const express = require("express");
 const admin = require("firebase-admin");
 const serviceAccount = require("./easywash-db-firebase-adminsdk-mi8xv-2a2ac3160e.json");
-
+const PORT = process.env.PORT || 8000;
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -219,4 +219,4 @@ app.delete("/servicos/:id", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Servidor rodando"));
+app.listen(PORT, () => console.log("Servidor rodando na porta", PORT));
