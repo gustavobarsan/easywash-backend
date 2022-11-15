@@ -12,9 +12,23 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => res.status(200).send("Bem vindo ao easywash"));
-
+ 
 //LOGIN AUTENTICAÇÃO
-// app.post();
+app.post("/login", async (req, res) => {
+  try {
+    const { email, senha } = req.body;
+    const resp = await usuariosRef
+      .where('email', '=', email)
+      .where('senha', '=', senha)
+      .get();
+    if(resp.empty) res.status(400).send("Usuário não existe ou credenciais inválidas");
+    let id
+    resp.forEach(doc => id = doc.id)
+    return res.status(200).json({ idUsuario: id })
+  } catch (error) {
+    throw new Error(error)
+  }
+});
 
 // CRUD USUARIOS
 const usuariosRef = db.collection("usuarios");
