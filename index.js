@@ -1,7 +1,7 @@
 const express = require("express");
 const admin = require("firebase-admin");
 const serviceAccount = require("./easywash-db-firebase-adminsdk-mi8xv-2a2ac3160e.json");
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000; 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -157,7 +157,7 @@ app.delete("/lavanderias/:id", async (req, res) => {
 });
 
 // CRUD SERVIÇOS
-const servicosRef = db.collection("serviços");
+const servicosRef = db.collection("servicos");
 app.post("/servicos", async (req, res) => {
   try {
     const form = req.body;
@@ -214,6 +214,69 @@ app.delete("/servicos/:id", async (req, res) => {
     const { id } = req.params;
     await servicosRef.doc(id).delete();
     return res.status(200).send("Serviço deletado");
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+// CRUD PEDIDOS
+const pedidosRef = db.collection("pedidos");
+app.post("/pedidos", async (req, res) => {
+  try {
+    const form = req.body;
+    await pedidosRef.add(form);
+    return res.status(200).send("Pedido adicionado");
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.get("/pedidos", async (req, res) => {
+  try {
+    const resp = await pedidosRef.get();
+    let listapedidos = [];
+    resp.forEach((doc) => {
+      const pedido = doc.data();
+      pedido.id = doc.id;
+      listapedidos.push(pedido);
+      console.log(doc.id, "=>", doc.data());
+    });
+
+    return res.status(200).json(listapedidos);
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.get("/pedidos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const resp = await pedidosRef.doc(id).get();
+    if (!resp.data()) {
+      return res.status(400).send("Pedido não encontrado");
+    }
+    return res.status(200).json(resp.data());
+  } catch (error) {}
+});
+
+app.patch("/pedidos/:id", async (req, res) => {
+  const { id } = req.params;
+  const updateData = req.body;
+  try {
+    await db.runTransaction(async (t) => {
+      t.update(pedidosRef.doc(id), updateData);
+    });
+    return res.status(200).send("Pedido atualizado");
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.delete("/pedidos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await pedidosRef.doc(id).delete();
+    return res.status(200).send("Pedido deletado");
   } catch (error) {
     throw new Error(error);
   }
