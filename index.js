@@ -183,9 +183,12 @@ app.post("/servicos", async (req, res) => {
   }
 });
 
-app.get("/servicos", async (req, res) => {
+app.get("/servicos/:idLavanderia", async (req, res) => {
+  const { idLavanderia } = req.params;
   try {
-    const resp = await servicosRef.get();
+    const resp = await servicosRef
+      .where("idLavanderia", "=", idLavanderia)
+      .get();
     let listaServicos = [];
     resp.forEach((doc) => {
       const servico = doc.data();
