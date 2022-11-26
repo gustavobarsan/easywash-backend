@@ -249,7 +249,7 @@ app.post("/pedidos", async (req, res) => {
   }
 });
 
-app.get("/pedidos", async (req, res) => {
+app.get("/pedidos/", async (req, res) => {
   try {
     const resp = await pedidosRef.get();
     let listapedidos = [];
@@ -274,6 +274,42 @@ app.get("/pedidos/:id", async (req, res) => {
       return res.status(400).send("Pedido não encontrado");
     }
     return res.status(200).json(resp.data());
+  } catch (error) {}
+});
+
+app.get("/pedidos/usuario/:idUsuario", async (req, res) => {
+  try {
+    const { idUsuario } = req.params;
+    const resp = await pedidosRef.where("idUsuario", "=", idUsuario).get();
+    if (!resp.data()) {
+      return res.status(400).send("Pedido não encontrado");
+    }
+    let listaPedidos;
+    resp.forEach((doc) => {
+      const pedido = doc.data();
+      pedido.id = doc.id;
+      listaPedidos.push(pedido);
+    });
+    return res.status(200).json(listaPedidos);
+  } catch (error) {}
+});
+
+app.get("/pedidos/lavanderia/:idLavanderia", async (req, res) => {
+  try {
+    const { idLavanderia } = req.params;
+    const resp = await pedidosRef
+      .where("idLavanderia", "=", idLavanderia)
+      .get();
+    if (!resp.data()) {
+      return res.status(400).send("Pedido não encontrado");
+    }
+    let listaPedidos;
+    resp.forEach((doc) => {
+      const pedido = doc.data();
+      pedido.id = doc.id;
+      listaPedidos.push(pedido);
+    });
+    return res.status(200).json(listaPedidos);
   } catch (error) {}
 });
 
