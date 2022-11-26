@@ -1,0 +1,21 @@
+_id: req_deb8aed8dbac4a6a9e14c600d928be9c
+type: Request
+parentId: fld_21bca59b38ed4372a181fb096f54cb2d
+modified: 1669501314236
+created: 1669491486861
+url: "{{ _.baseUrl }}/servicos/{idServico}"
+name: deletar um servico
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667422898619.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

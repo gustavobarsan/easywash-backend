@@ -1,0 +1,21 @@
+_id: req_fb64ad9d235f4ff3813bc64b1ca019f3
+type: Request
+parentId: fld_13ce472f9382416a8c522d98bc1018aa
+modified: 1669490129490
+created: 1669487838790
+url: "{{ _.baseUrl }}/lavanderias"
+name: listar lavanderias
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667424246425
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

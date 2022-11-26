@@ -1,0 +1,32 @@
+_id: req_0480d1a4591542af93242fd7307ca17a
+type: Request
+parentId: fld_21bca59b38ed4372a181fb096f54cb2d
+modified: 1669502378690
+created: 1669491486847
+url: "{{ _.baseUrl }}/servicos"
+name: criar servico
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"titulo": "25 peças",
+    	"descricao": "Combo de lavagem de 25 pecas de algodao, a melhor opcao de para a lavagem de rotina",
+    	"valor": "50.00",
+    	"idLavanderia": "PC9MOVXf45udIZkPRXel"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_972f51bc8b824c0ba2e07679f73c0ddf
+authentication: {}
+metaSortKey: -1667422449351
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

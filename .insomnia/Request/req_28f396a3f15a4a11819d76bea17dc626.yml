@@ -1,0 +1,37 @@
+_id: req_28f396a3f15a4a11819d76bea17dc626
+type: Request
+parentId: fld_1d73397bb50247fdabdca99f57292820
+modified: 1669501439464
+created: 1667422449351
+url: localhost:3000/usuarios
+name: criar usuário
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"nome": "Jorge",
+    	"email": "jorge@mail.com",
+    	"telefone": "73 00000000",
+    	"cpf": "00000000000",
+    	"rua": "333",
+    	"bairro": "muito loco", 
+    	"cidade": "crazy city",
+    	"uf": "BA",
+    	"senha": "123qwe"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_972f51bc8b824c0ba2e07679f73c0ddf
+authentication: {}
+metaSortKey: -1667422449351
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

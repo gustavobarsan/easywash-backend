@@ -1,0 +1,14 @@
+_id: env_a2c5f0ba42079d312e04094b477dedea4d42e42c
+type: Environment
+parentId: wrk_c004215a2a9d48bc9367a1629b2777e8
+modified: 1669487673126
+created: 1667422400233
+name: Base Environment
+data:
+  baseUrl: https://easywash-backend.herokuapp.com
+dataPropertyOrder:
+  "&":
+    - baseUrl
+color: null
+isPrivate: false
+metaSortKey: 1667422400233

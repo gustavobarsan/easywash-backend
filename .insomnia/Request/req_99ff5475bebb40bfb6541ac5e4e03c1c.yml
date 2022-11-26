@@ -1,0 +1,21 @@
+_id: req_99ff5475bebb40bfb6541ac5e4e03c1c
+type: Request
+parentId: fld_cc064816327d4dc9ba1db0d446e477a7
+modified: 1669501116881
+created: 1669498827642
+url: "{{ _.baseUrl }}/pedido/{idPedido}"
+name: deletar um pedido
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667422898619.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

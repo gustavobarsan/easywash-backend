@@ -1,0 +1,21 @@
+_id: req_c390d3aca0ae40d68c1b8091b2c53bc2
+type: Request
+parentId: fld_13ce472f9382416a8c522d98bc1018aa
+modified: 1669501422217
+created: 1669487838797
+url: "{{ _.baseUrl }}/lavanderias/{idLavenderia}"
+name: listar uma lavanderia
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667423347888
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

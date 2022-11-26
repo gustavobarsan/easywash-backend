@@ -1,0 +1,29 @@
+_id: req_4dbd742fe1ac420a9453a49d5056a282
+type: Request
+parentId: fld_13ce472f9382416a8c522d98bc1018aa
+modified: 1669501437580
+created: 1669487838800
+url: "{{ _.baseUrl }}/lavanderias/{idLavanderia}"
+name: atualizar lavanderia
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"nome": "Outra Lavanderia"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_807d9ea7b59f4ef8a9ae6ab9b0571bd2
+authentication: {}
+metaSortKey: -1667436566218
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

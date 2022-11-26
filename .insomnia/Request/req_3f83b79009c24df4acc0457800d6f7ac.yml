@@ -1,0 +1,21 @@
+_id: req_3f83b79009c24df4acc0457800d6f7ac
+type: Request
+parentId: fld_1d73397bb50247fdabdca99f57292820
+modified: 1669501446063
+created: 1667440260357
+url: localhost:3000/usuarios/{idUsuario}
+name: deletar um usuario
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667422898619.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

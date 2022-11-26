@@ -1,0 +1,21 @@
+_id: req_84f4cc32f42d42298d053dab00920079
+type: Request
+parentId: fld_21bca59b38ed4372a181fb096f54cb2d
+modified: 1669501331351
+created: 1669491486853
+url: "{{ _.baseUrl }}/servicos/{idServico}"
+name: listar um servico
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667423347888
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

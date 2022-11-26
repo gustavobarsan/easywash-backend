@@ -1,0 +1,21 @@
+_id: req_cb97e0303bd640588c5ecc65a9da1d6a
+type: Request
+parentId: fld_21bca59b38ed4372a181fb096f54cb2d
+modified: 1669501366456
+created: 1669491486850
+url: "{{ _.baseUrl }}/servicos/lavanderia/{idLavanderia}"
+name: listar servicos lavanderia
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667424246425
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,38 @@
+_id: req_8147b56bc76942cb8de7f4b4e2439ad6
+type: Request
+parentId: fld_13ce472f9382416a8c522d98bc1018aa
+modified: 1669501400475
+created: 1669487838781
+url: "{{ _.baseUrl }}/lavanderias"
+name: criar lavanderia
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"nome": "Minha Lavanderia",
+    	"email": "minhalavanderia@mail.com",
+    	"telefone": "73 00000000",
+    	"cnpj": "00000000000",
+    	"cep": "45604000",
+    	"rua": "333",
+    	"bairro": "muito loco", 
+    	"cidade": "crazy city",
+    	"uf": "BA",
+    	"senha": "123qwe"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_972f51bc8b824c0ba2e07679f73c0ddf
+authentication: {}
+metaSortKey: -1667422449351
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

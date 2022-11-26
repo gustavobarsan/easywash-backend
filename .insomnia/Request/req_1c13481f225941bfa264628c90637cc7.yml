@@ -1,0 +1,21 @@
+_id: req_1c13481f225941bfa264628c90637cc7
+type: Request
+parentId: fld_13ce472f9382416a8c522d98bc1018aa
+modified: 1669501412099
+created: 1669487838802
+url: "{{ _.baseUrl }}/lavanderia/{idLavenderia}"
+name: deletar uma lavanderia
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667422898619.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

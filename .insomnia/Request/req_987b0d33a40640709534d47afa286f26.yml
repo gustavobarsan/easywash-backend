@@ -1,0 +1,21 @@
+_id: req_987b0d33a40640709534d47afa286f26
+type: Request
+parentId: fld_1d73397bb50247fdabdca99f57292820
+modified: 1667424256258
+created: 1667424246425
+url: localhost:3000/usuarios
+name: listar usuarios
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667424246425
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

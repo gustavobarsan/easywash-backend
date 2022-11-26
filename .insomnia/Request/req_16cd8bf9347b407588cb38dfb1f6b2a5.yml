@@ -1,0 +1,21 @@
+_id: req_16cd8bf9347b407588cb38dfb1f6b2a5
+type: Request
+parentId: fld_cc064816327d4dc9ba1db0d446e477a7
+modified: 1669501284291
+created: 1669498827630
+url: "{{ _.baseUrl }}/pedidos/usuario/{idUsuario}"
+name: listar pedidos usuario
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667424246425
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,29 @@
+_id: req_b3dc33f2da144b07975bd9b38a73e39c
+type: Request
+parentId: fld_21bca59b38ed4372a181fb096f54cb2d
+modified: 1669501392857
+created: 1669491486858
+url: "{{ _.baseUrl }}/servicos/{idLavanderia}"
+name: atualizar servico
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"titulo": "Outro titulo"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_807d9ea7b59f4ef8a9ae6ab9b0571bd2
+authentication: {}
+metaSortKey: -1667436566218
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

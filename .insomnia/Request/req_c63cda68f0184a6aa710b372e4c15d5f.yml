@@ -1,0 +1,21 @@
+_id: req_c63cda68f0184a6aa710b372e4c15d5f
+type: Request
+parentId: fld_cc064816327d4dc9ba1db0d446e477a7
+modified: 1669501150551
+created: 1669498827633
+url: "{{ _.baseUrl }}/servicos/{idPedido}"
+name: listar um pedido
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667423347888
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,31 @@
+_id: req_83d5eb7a0e944fb18c1ba1bac5c5f88d
+type: Request
+parentId: fld_cc064816327d4dc9ba1db0d446e477a7
+modified: 1669501288375
+created: 1669498827620
+url: "{{ _.baseUrl }}/pedidos"
+name: criar pedido
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"idUsuario": "",
+    	"idLavanderia": "",
+    	"listaServico": [""]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_972f51bc8b824c0ba2e07679f73c0ddf
+authentication: {}
+metaSortKey: -1667422449351
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

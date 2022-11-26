@@ -1,0 +1,30 @@
+_id: req_789bc9a2b00a4bc295644bd76dc315bb
+type: Request
+parentId: wrk_c004215a2a9d48bc9367a1629b2777e8
+modified: 1669489919839
+created: 1669487543806
+url: "{{ _.baseUrl }}/login"
+name: Login
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email":"thiago@mail.com",
+    	"senha":"123qwe"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_0b08a121ec1e441086329a66d0c16279
+authentication: {}
+metaSortKey: -1669487543806
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

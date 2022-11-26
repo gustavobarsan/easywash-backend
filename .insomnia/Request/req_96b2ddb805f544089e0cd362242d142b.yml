@@ -1,0 +1,29 @@
+_id: req_96b2ddb805f544089e0cd362242d142b
+type: Request
+parentId: fld_1d73397bb50247fdabdca99f57292820
+modified: 1669501468422
+created: 1667436566218
+url: localhost:3000/usuarios/{idUsuario}
+name: atualizar usuario
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"nome": "Jorge Barreto"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_807d9ea7b59f4ef8a9ae6ab9b0571bd2
+authentication: {}
+metaSortKey: -1667436566218
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
