@@ -1,6 +1,7 @@
 const express = require("express");
 const admin = require("firebase-admin");
 const serviceAccount = require("./easywash-db-firebase-adminsdk-mi8xv-2a2ac3160e.json");
+var cors = require('cors')
 const PORT = process.env.PORT || 8000; 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -8,7 +9,7 @@ admin.initializeApp({
 
 const db = admin.firestore();
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => res.status(200).send("Bem vindo ao easywash"));
