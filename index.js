@@ -1,8 +1,8 @@
 const express = require("express");
 const admin = require("firebase-admin");
 const serviceAccount = require("./easywash-db-firebase-adminsdk-mi8xv-2a2ac3160e.json");
-var cors = require('cors')
-const PORT = process.env.PORT || 8000; 
+var cors = require("cors");
+const PORT = process.env.PORT || 8000;
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -13,21 +13,35 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => res.status(200).send("Bem vindo ao easywash"));
- 
+
 //LOGIN AUTENTICAÇÃO
 app.post("/login", async (req, res) => {
   try {
     const { email, senha } = req.body;
     const resp = await usuariosRef
-      .where('email', '=', email)
-      .where('senha', '=', senha)
+      .where("email", "=", email)
+      .where("senha", "=", senha)
       .get();
-    if(resp.empty) res.status(400).send("Usuário não existe ou credenciais inválidas");
-    let id
-    resp.forEach(doc => id = doc.id)
-    return res.status(200).json({ idUsuario: id })
+
+    const resp2 = await lavanderiasRef
+      .where("email", "=", email)
+      .where("senha", "=", senha)
+      .get();
+
+    if (resp.empty && resp2.empty)
+      res.status(400).send("Usuário não existe ou credenciais inválidas");
+
+    if (!resp.empty) {
+      let idU;
+      resp.forEach((doc) => (idU = doc.id));
+      return res.status(200).json({ idUsuario: idU });
+    }
+
+    let idL;
+    resp2.forEach((doc) => (idL = doc.id));
+    return res.status(200).json({ idLavanderia: idL });
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error);
   }
 });
 
