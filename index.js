@@ -183,7 +183,7 @@ app.post("/servicos", async (req, res) => {
   }
 });
 
-app.get("/servicos/:idLavanderia", async (req, res) => {
+app.get("/servicos/lavanderia/:idLavanderia", async (req, res) => {
   const { idLavanderia } = req.params;
   try {
     const resp = await servicosRef
