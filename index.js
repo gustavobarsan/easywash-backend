@@ -41,7 +41,7 @@ app.post("/login", async (req, res) => {
     resp2.forEach((doc) => (idL = doc.id));
     return res.status(200).json({ idLavanderia: idL });
   } catch (error) {
-    throw new Error(error);
+    console.error(error);
   }
 });
 
@@ -53,7 +53,7 @@ app.post("/usuarios", async (req, res) => {
     await usuariosRef.add(form);
     return res.status(200).send("Usuário adicionado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -70,7 +70,7 @@ app.get("/usuarios", async (req, res) => {
 
     return res.status(200).json(listaUsuarios);
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -82,7 +82,9 @@ app.get("/usuarios/:id", async (req, res) => {
       return res.status(400).send("Usuário não encontrado");
     }
     return res.status(200).json(resp.data());
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 });
 
 app.patch("/usuarios/:id", async (req, res) => {
@@ -94,7 +96,7 @@ app.patch("/usuarios/:id", async (req, res) => {
     });
     return res.status(200).send("Usuário atualizado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -104,7 +106,7 @@ app.delete("/usuarios/:id", async (req, res) => {
     await usuariosRef.doc(id).delete();
     return res.status(200).send("Usuário deletado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -116,7 +118,7 @@ app.post("/lavanderias", async (req, res) => {
     await lavanderiasRef.add(form);
     return res.status(200).send("Lavanderia adicionada");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -133,7 +135,7 @@ app.get("/lavanderias", async (req, res) => {
 
     return res.status(200).json(listaLavanderias);
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -145,7 +147,9 @@ app.get("/lavanderias/:id", async (req, res) => {
       return res.status(400).send("Lavanderia não encontrada");
     }
     return res.status(200).json(resp.data());
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 });
 
 app.patch("/lavanderias/:id", async (req, res) => {
@@ -157,7 +161,7 @@ app.patch("/lavanderias/:id", async (req, res) => {
     });
     return res.status(200).send("Lavanderia atualizada");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -167,7 +171,7 @@ app.delete("/lavanderias/:id", async (req, res) => {
     await lavanderiasRef.doc(id).delete();
     return res.status(200).send("Lavanderia deletada");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -179,7 +183,7 @@ app.post("/servicos", async (req, res) => {
     await servicosRef.add(form);
     return res.status(200).send("Serviço adicionado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -199,7 +203,7 @@ app.get("/servicos/lavanderia/:idLavanderia", async (req, res) => {
 
     return res.status(200).json(listaServicos);
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -211,7 +215,9 @@ app.get("/servicos/:id", async (req, res) => {
       return res.status(400).send("Serviço não encontrado");
     }
     return res.status(200).json(resp.data());
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 });
 
 app.patch("/servicos/:id", async (req, res) => {
@@ -223,7 +229,7 @@ app.patch("/servicos/:id", async (req, res) => {
     });
     return res.status(200).send("Serviço atualizado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -233,7 +239,7 @@ app.delete("/servicos/:id", async (req, res) => {
     await servicosRef.doc(id).delete();
     return res.status(200).send("Serviço deletado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -245,7 +251,7 @@ app.post("/pedidos", async (req, res) => {
     await pedidosRef.add(form);
     return res.status(200).send("Pedido adicionado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -262,7 +268,7 @@ app.get("/pedidos/", async (req, res) => {
 
     return res.status(200).json(listapedidos);
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -274,7 +280,9 @@ app.get("/pedidos/:id", async (req, res) => {
       return res.status(400).send("Pedido não encontrado");
     }
     return res.status(200).json(resp.data());
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 });
 
 app.get("/pedidos/usuario/:idUsuario", async (req, res) => {
@@ -291,7 +299,9 @@ app.get("/pedidos/usuario/:idUsuario", async (req, res) => {
       listaPedidos.push(pedido);
     });
     return res.status(200).json(listaPedidos);
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 });
 
 app.get("/pedidos/lavanderia/:idLavanderia", async (req, res) => {
@@ -310,7 +320,9 @@ app.get("/pedidos/lavanderia/:idLavanderia", async (req, res) => {
       listaPedidos.push(pedido);
     });
     return res.status(200).json(listaPedidos);
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 });
 
 app.patch("/pedidos/:id", async (req, res) => {
@@ -322,7 +334,7 @@ app.patch("/pedidos/:id", async (req, res) => {
     });
     return res.status(200).send("Pedido atualizado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
@@ -332,7 +344,7 @@ app.delete("/pedidos/:id", async (req, res) => {
     await pedidosRef.doc(id).delete();
     return res.status(200).send("Pedido deletado");
   } catch (error) {
-    throw new Error(error);
+    console.error(error)
   }
 });
 
