@@ -39,7 +39,7 @@ app.post("/login", async (req, res) => {
 
     let idL;
     resp2.forEach((doc) => (idL = doc.id));
-    return res.status(200).json({ idLavanderia: idL });
+    return res.status(201).json({ idLavanderia: idL });
   } catch (error) {
     console.error(error);
   }
